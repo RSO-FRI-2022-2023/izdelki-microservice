@@ -1,13 +1,11 @@
 package v1.resources;
 
 import DTOs.CenaDTO;
-import DTOs.IzdelekDTO;
 import beans.CenaBean;
 import beans.IzdelekBean;
 import beans.TrgovinaBean;
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import models.Cena;
-import models.Izdelek;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -17,7 +15,6 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -25,6 +22,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 @ApplicationScoped
@@ -78,6 +76,7 @@ public class CenaResource {
             description = "Identifikator izdelka.",
             required = true)
                                    @PathParam("id") int id){
+        logger.log(Level.FINE,"a");
         List<Cena> cene = (List<Cena>) cenaBean.vrniCeneIzdelka(id);
         if(cene != null){
             return Response.status(Response.Status.OK).entity(cene).build();

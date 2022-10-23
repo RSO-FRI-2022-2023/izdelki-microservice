@@ -11,13 +11,13 @@ import javax.persistence.*;
                         query = "SELECT c FROM Cena c"),
                 //vrni cene izdelka
                 @NamedQuery(name = "Cena.getByizdelekId",
-                        query = "SELECT c FROM Cena c WHERE c.izdelek = :izdelekId"),
+                        query = "SELECT c FROM Cena c WHERE c.izdelek.id = :izdelekId"),
                 //vrni ceno - id
                 @NamedQuery(name = "Cena.getByid",
                         query = "SELECT c FROM Cena c WHERE c.id = :id"),
                 //vrni cene neke trgovine
                 @NamedQuery(name = "Cena.getByTrgovinaId",
-                        query = "SELECT c FROM Cena c WHERE c.trgovina = :trgovinaId"),
+                        query = "SELECT c FROM Cena c WHERE c.trgovina.id = :trgovinaId"),
         })
 public class Cena{
     @Id

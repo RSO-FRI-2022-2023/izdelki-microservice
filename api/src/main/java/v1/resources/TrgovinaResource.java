@@ -20,6 +20,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 @RequestScoped
 @Path("trgovine")
@@ -88,6 +89,7 @@ public class TrgovinaResource {
             description = "Identifikator trgovine.",
             required = true)
                                  @PathParam("ime") String ime){
+//        logger.log(Level.ALL, ime);
         Trgovina trgovina = trgovinaBean.vrniTrgovino(ime);
         if(trgovina != null){
             return Response.status(Response.Status.OK).entity(trgovina).build();
