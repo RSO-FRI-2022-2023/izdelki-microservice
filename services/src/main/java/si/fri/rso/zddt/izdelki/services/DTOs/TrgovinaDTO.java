@@ -1,4 +1,4 @@
-package DTOs;
+package si.fri.rso.zddt.izdelki.services.DTOs;
 
 public class TrgovinaDTO {
     private Integer id;

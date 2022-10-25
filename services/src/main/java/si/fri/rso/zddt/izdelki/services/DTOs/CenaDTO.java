@@ -1,7 +1,4 @@
-package DTOs;
-
-import models.Izdelek;
-import models.Trgovina;
+package si.fri.rso.zddt.izdelki.services.DTOs;
 
 
 public class CenaDTO {

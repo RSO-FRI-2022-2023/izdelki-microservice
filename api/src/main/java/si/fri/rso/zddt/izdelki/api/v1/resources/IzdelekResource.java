@@ -1,9 +1,6 @@
-package v1.resources;
+package si.fri.rso.zddt.izdelki.api.v1.resources;
 
-import DTOs.IzdelekDTO;
-import beans.IzdelekBean;
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
-import models.Izdelek;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -11,6 +8,9 @@ import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import si.fri.rso.zddt.izdelki.models.Izdelek;
+import si.fri.rso.zddt.izdelki.services.DTOs.IzdelekDTO;
+import si.fri.rso.zddt.izdelki.services.beans.IzdelekBean;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -20,7 +20,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
-import java.util.logging.Logger;
 
 @RequestScoped
 @Path("izdelki")
@@ -28,8 +27,6 @@ import java.util.logging.Logger;
 @Consumes(MediaType.APPLICATION_JSON)
 @CrossOrigin(supportedMethods = "GET, POST, PUT, DELETE, HEAD, OPTIONS")
 public class IzdelekResource {
-
-    private Logger logger = Logger.getLogger(IzdelekResource.class.getName());
 
     @Context
     protected UriInfo uriInfo;
@@ -42,12 +39,12 @@ public class IzdelekResource {
             @APIResponse(responseCode = "200",
                     description = "Seznam izdelkov.",
                     content = @Content(
-                                schema = @Schema(implementation = Izdelek.class))
+                            schema = @Schema(implementation = Izdelek.class))
             ),
             @APIResponse(responseCode = "404", description = "Izdelki not found")
     })
     @GET
-    public Response vrniIzdelke(){
+    public Response vrniIzdelke() {
         List<Izdelek> izdelki = izdelekBean.vrniIzdelke();
         return Response.status(Response.Status.OK).entity(izdelki).build();
     }
@@ -66,11 +63,11 @@ public class IzdelekResource {
     public Response vrniIzdelek(@Parameter(
             description = "Identifikator izdelka.",
             required = true)
-                                   @PathParam("id") int id){
+                                @PathParam("id") int id) {
         Izdelek izdelek = izdelekBean.vrniIzdelek(id);
-        if(izdelek != null){
+        if (izdelek != null) {
             return Response.status(Response.Status.OK).entity(izdelek).build();
-        }else{
+        } else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
@@ -88,11 +85,11 @@ public class IzdelekResource {
     @Path("/kategorija/{kategorija}")
     public Response vrniIzdelek(@Parameter(
             description = "Kategorija izdelka.",
-            required = true) @PathParam("kategorija") String kategorija){
+            required = true) @PathParam("kategorija") String kategorija) {
         List<Izdelek> izdelki = izdelekBean.vrniIzdelke(kategorija);
-        if(izdelki != null){
+        if (izdelki != null) {
             return Response.status(Response.Status.OK).entity(izdelki).build();
-        }else{
+        } else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
@@ -114,9 +111,9 @@ public class IzdelekResource {
         i.setKategorija(izdelekDTO.getKategorija());
         i.setNaziv(izdelekDTO.getNaziv());
         i = izdelekBean.dodajIzdelek((i));
-        if(i != null){
+        if (i != null) {
             return Response.status(Response.Status.CREATED).entity(i).build();
-        }else{
+        } else {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
@@ -136,7 +133,7 @@ public class IzdelekResource {
     public Response odstraniIzdelek(@Parameter(
             description = "Identifikator izdelka za brisanje.",
             required = true)
-                                       @PathParam("id") int id) {
+                                    @PathParam("id") int id) {
         var success = izdelekBean.odstraniIzdelek(id);
         if (success) {
             return Response.status(Response.Status.OK).entity(true).build();
@@ -144,8 +141,6 @@ public class IzdelekResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
-
-
 
 
 }

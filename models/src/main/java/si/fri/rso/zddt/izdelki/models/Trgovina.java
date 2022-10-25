@@ -1,4 +1,4 @@
-package models;
+package si.fri.rso.zddt.izdelki.models;
 
 
 import javax.json.bind.annotation.JsonbTransient;
@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.List;
 
 @Entity
-@Table(name= "trgovina")
+@Table(name = "trgovina")
 @NamedQueries(value =
         {
                 //vrni vse trgovine
