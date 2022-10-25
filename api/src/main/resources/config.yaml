@@ -6,7 +6,7 @@ kumuluzee:
   datasources:
   - jndi-name: jdbc/IzdelkiDS
     connection-url: jdbc:postgresql://localhost:5432/izdelki
-#    connection-url: jdbc:postgresql://host.docker.internal:5432/izdelki
+    #connection-url: jdbc:postgresql://host.docker.internal:5432/izdelki
     username: dbuser
     password: postgres
 integrations:

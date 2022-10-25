@@ -1,9 +1,9 @@
-package models;
+package si.fri.rso.zddt.izdelki.models;
 
 import javax.persistence.*;
 
 @Entity
-@Table(name= "cena")
+@Table(name = "cena")
 @NamedQueries(value =
         {
                 //vrni vse cene
@@ -19,7 +19,7 @@ import javax.persistence.*;
                 @NamedQuery(name = "Cena.getByTrgovinaId",
                         query = "SELECT c FROM Cena c WHERE c.trgovina.id = :trgovinaId"),
         })
-public class Cena{
+public class Cena {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cena_id")

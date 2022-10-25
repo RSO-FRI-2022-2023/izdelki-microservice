@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>si.fri.rso.izdelki</groupId>
+    <groupId>si.fri.rso.zddt.izdelki</groupId>
     <artifactId>rso-izdelki</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
@@ -28,6 +28,15 @@
         <postgresql.version>42.5.0</postgresql.version>
         <kumuluzee-cors.version>1.0.6</kumuluzee-cors.version>
     </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.24</version>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <dependencies>
@@ -76,22 +85,22 @@
             </dependency>
 
             <dependency>
-                <groupId>si.fri.rso.izdelki</groupId>
+                <groupId>si.fri.rso.zddt.izdelki</groupId>
                 <artifactId>izdelki-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>si.fri.rso.izdelki</groupId>
+                <groupId>si.fri.rso.zddt.izdelki</groupId>
                 <artifactId>izdelki-models</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>si.fri.rso.izdelki</groupId>
+                <groupId>si.fri.rso.zddt.izdelki</groupId>
                 <artifactId>izdelki-services</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
-                <groupId>si.fri.rso.izdelki</groupId>
+                <groupId>si.fri.rso.zddt.izdelki</groupId>
                 <artifactId>izdelki-lib</artifactId>
                 <version>${project.version}</version>
             </dependency>

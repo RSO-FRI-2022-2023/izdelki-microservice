@@ -1,12 +1,12 @@
-package models;
+package si.fri.rso.zddt.izdelki.models;
 
-import java.util.List;
 import javax.json.bind.annotation.JsonbTransient;
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
-@Table(name= "izdelek")
+@Table(name = "izdelek")
 @NamedQueries(value =
         {
                 //vrni vse izdelke
