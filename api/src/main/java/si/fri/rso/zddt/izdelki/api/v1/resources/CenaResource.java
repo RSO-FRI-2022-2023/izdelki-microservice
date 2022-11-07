@@ -8,7 +8,7 @@ import org.eclipse.microprofile.openapi.annotations.media.Schema;
 import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
-import si.fri.rso.zddt.izdelki.models.Cena;
+import si.fri.rso.zddt.common.models.Cena;
 import si.fri.rso.zddt.izdelki.services.DTOs.CenaDTO;
 import si.fri.rso.zddt.izdelki.services.beans.CenaBean;
 import si.fri.rso.zddt.izdelki.services.beans.IzdelekBean;

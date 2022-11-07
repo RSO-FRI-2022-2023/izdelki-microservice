@@ -8,7 +8,7 @@ import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
-import si.fri.rso.zddt.izdelki.models.Izdelek;
+import si.fri.rso.zddt.common.models.Izdelek;
 import si.fri.rso.zddt.izdelki.services.DTOs.IzdelekDTO;
 import si.fri.rso.zddt.izdelki.services.beans.IzdelekBean;
 

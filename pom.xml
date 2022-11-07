@@ -9,6 +9,21 @@
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
 
+    <repositories>
+        <repository>
+            <id>my-hosted</id>
+            <name>My Hosted server</name>
+            <url>https://maven.songify.si/repository/rso/</url>
+            <layout>default</layout>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
     <modules>
         <module>api</module>
         <module>services</module>
@@ -103,6 +118,11 @@
                 <groupId>si.fri.rso.zddt.izdelki</groupId>
                 <artifactId>izdelki-lib</artifactId>
                 <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>si.fri.rso.zddt</groupId>
+                <artifactId>common</artifactId>
+                <version>1.0-SNAPSHOT</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
