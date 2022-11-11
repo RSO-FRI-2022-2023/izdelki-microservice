@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: izdelki-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: izdelki-service
+  template:
+    metadata:
+      labels:
+        app: izdelki-service
+    spec:
+      containers:
+        - image: zigadrab/rso-izdelki-service
+          name: izdelki-service
+          env:
+            - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
+              value: jdbc:postgresql://34.118.85.117:5432/eminent-carver-368220:europe-central2:rso
+            - name: KUMULUZEE_DATASOURCES0_USERNAME
+              value: postgres
+            - name: KUMULUZEE_DATASOURCES0_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: pg-pass
+                  key: KUMULUZEE_DATASOURCES0_PASSWORD
+          ports:
+            - containerPort: 8080
+              name: server
+              protocol: TCP
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: izdelki-service
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      protocol: TCP
+      targetPort: server
+  selector:
+    app: izdelki-service

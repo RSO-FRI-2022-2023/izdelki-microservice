@@ -32,4 +32,4 @@ jobs:
         with:
           file: ./Dockerfile_with_maven_build
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/rso-izdelki-microservice
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/rso-izdelki-service

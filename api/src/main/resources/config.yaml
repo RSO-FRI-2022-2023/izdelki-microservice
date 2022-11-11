@@ -9,8 +9,3 @@ kumuluzee:
     #connection-url: jdbc:postgresql://host.docker.internal:5432/izdelki
     username: dbuser
     password: postgres
-integrations:
-#  nazadnje:
-#    base-url: http://localhost:8081/v1
-#  rezervacije:
-#    base-url: http://localhost:8082/v1
