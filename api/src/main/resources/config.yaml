@@ -5,7 +5,8 @@ kumuluzee:
     name: dev
   datasources:
   - jndi-name: jdbc/IzdelkiDS
-    connection-url: jdbc:postgresql://localhost:5432/izdelki
+    #connection-url: jdbc:postgresql://localhost:5432/izdelki
+    connection-url: jdbc:postgresql://34.118.85.117:5432/rso
     #connection-url: jdbc:postgresql://host.docker.internal:5432/izdelki
-    username: dbuser
-    password: postgres
+    username: rso
+    password: rso

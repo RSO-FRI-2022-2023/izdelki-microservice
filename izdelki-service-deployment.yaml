@@ -17,9 +17,9 @@ spec:
           name: izdelki-service
           env:
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
-              value: jdbc:postgresql://34.118.85.117:5432/eminent-carver-368220:europe-central2:rso
+              value: jdbc:postgresql://34.118.85.117:5432/rso
             - name: KUMULUZEE_DATASOURCES0_USERNAME
-              value: postgres
+              value: rso
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
               valueFrom:
                 secretKeyRef:
