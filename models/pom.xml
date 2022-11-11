@@ -34,6 +34,10 @@
             <artifactId>postgresql</artifactId>
             <version>${postgresql.version}</version>
         </dependency>
+        <dependency>
+            <groupId>si.fri.rso.zddt</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
     </dependencies>
 
 </project>

@@ -1,7 +1,7 @@
 package si.fri.rso.zddt.izdelki.services.beans;
 
 import lombok.extern.slf4j.Slf4j;
-import si.fri.rso.zddt.izdelki.models.Cena;
+import si.fri.rso.zddt.common.models.Cena;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;

@@ -3,9 +3,9 @@
     <persistence-unit name="izdelki-jpa" transaction-type="JTA">
         <jta-data-source>jdbc/IzdelkiDS</jta-data-source>
 
-        <class>si.fri.rso.zddt.izdelki.models.Cena</class>
-        <class>si.fri.rso.zddt.izdelki.models.Trgovina</class>
-        <class>si.fri.rso.zddt.izdelki.models.Izdelek</class>
+        <class>si.fri.rso.zddt.common.models.Cena</class>
+        <class>si.fri.rso.zddt.common.models.Trgovina</class>
+        <class>si.fri.rso.zddt.common.models.Izdelek</class>
 
         <properties>
             <property name="javax.persistence.schema-generation.database.action" value="drop-and-create"/>
