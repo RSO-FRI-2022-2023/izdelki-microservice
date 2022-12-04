@@ -5,8 +5,20 @@ kumuluzee:
     name: dev
   datasources:
   - jndi-name: jdbc/IzdelkiDS
-    #connection-url: jdbc:postgresql://localhost:5432/izdelki
-    connection-url: jdbc:postgresql://34.118.85.117:5432/rso
+    connection-url: jdbc:postgresql://localhost:5432/izdelki
+    #connection-url: jdbc:postgresql://34.118.85.117:5432/rso
     #connection-url: jdbc:postgresql://host.docker.internal:5432/izdelki
     username: rso
     password: rso
+  health:
+    checks:
+      data-source-health-check:
+        jndi-name: jdbc/IzdelkiDS
+        type: liveness
+  metrics:
+    web-instrumentation:
+      - name: izdelki-endpoint
+        url-pattern: /v1/izdelki/*
+rest-properties:
+  discount: false
+  broken: false

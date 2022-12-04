@@ -10,6 +10,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 import java.util.List;
+import org.eclipse.microprofile.metrics.annotation.Timed;
 
 @Slf4j
 @ApplicationScoped
@@ -23,6 +24,7 @@ public class IzdelekBean {
     @PersistenceContext(unitName = "izdelki-jpa")
     private EntityManager em;
 
+    @Timed
     public List<Izdelek> vrniIzdelke() {
         Query q = em.createNamedQuery("Izdelek.getAll");
         List<Izdelek> resultSet = (List<Izdelek>) q.getResultList();

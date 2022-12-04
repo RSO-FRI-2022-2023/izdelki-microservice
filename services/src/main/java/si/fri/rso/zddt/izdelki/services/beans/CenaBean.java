@@ -80,4 +80,11 @@ public class CenaBean {
         return cena;
     }
 
+    @Transactional
+    public void popust(Double discount){
+        Query q = em.createNamedQuery("Cena.popust");
+        q.setParameter("discount", discount);
+        q.executeUpdate();
+    }
+
 }

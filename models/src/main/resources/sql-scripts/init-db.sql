@@ -24,93 +24,93 @@ INSERT INTO Trgovina (ime, lokacija) VALUES ('Mimovrste', 'Šmartinska cesta 152
 INSERT INTO Trgovina (ime, lokacija) VALUES ('Edigital', 'Tržaška cesta 88, 1000 Ljubljana');
 INSERT INTO Trgovina (ime, lokacija) VALUES ('Harvey Norman', 'Ljubljanska cesta 95, 8000 Novo mesto');
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (1,1,399.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (1,2,399.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (1,3,499.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (1,4,420.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (1,5,421.00);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,1,399.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,2,399.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,3,499.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,4,420.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,5,421.00, 0);
 
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (2,1,50.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (2,2,48.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (2,3,53.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (2,4,45.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (2,5,46.00);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (2,1,50.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (2,2,48.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (2,3,53.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (2,4,45.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (2,5,46.00, 0);
 
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (3,1,65.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (3,2,79.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (3,3,69.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (3,5,60.00);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (3,1,65.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (3,2,79.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (3,3,69.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (3,5,60.00, 0);
 
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (4,1,1165.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (4,3,1200.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (4,4,1090.00);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (4,1,1165.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (4,3,1200.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (4,4,1090.00, 0);
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (5,1,100.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (5,2,101.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (5,3,102.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (5,4,103.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (5,4,105.00);
-
-
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (6,1,500.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (6,2,480.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (6,3,440.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (6,4,420.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (6,4,470.00);
-
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (7,1,1010.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (7,2,1000.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (7,3,1111.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (7,4,1222.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (7,4,999.00);
-
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (8,1,1610.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (8,2,1699.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (8,3,1550.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (8,4,1550.00);
-
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (9,4,230.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (9,2,250.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (9,5,260.00);
-
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (10,1,501.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (10,2,502.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (10,3,499.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (10,4,499.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (10,4,480.99);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (5,1,100.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (5,2,101.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (5,3,102.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (5,4,103.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (5,4,105.00, 0);
 
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (11,1,50.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (11,2,49.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (11,3,60.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (11,4,52.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (11,5,40.99);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (6,1,500.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (6,2,480.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (6,3,440.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (6,4,420.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (6,4,470.00, 0);
+
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (7,1,1010.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (7,2,1000.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (7,3,1111.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (7,4,1222.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (7,4,999.00, 0);
+
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (8,1,1610.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount VALUES (8,2,1699.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (8,3,1550.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (8,4,1550.00, 0);
+
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (9,4,230.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (9,2,250.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (9,5,260.00, 0);
+
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (10,1,501.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (10,2,502.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (10,3,499.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (10,4,499.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (10,4,480.99, 0);
 
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (12,1,501.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (12,2,502.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (12,3,499.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (12,4,499.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (12,5,490.99);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (11,1,50.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (11,2,49.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (11,3,60.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (11,4,52.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (11,5,40.99, 0);
 
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (13,1,1000.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (13,2,999.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (13,3,990.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (13,4,980.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (13,5,985.99);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (12,1,501.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (12,2,502.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (12,3,499.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (12,4,499.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (12,5,490.99, 0);
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (14,1,1000.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (14,2,999.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (14,3,990.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (14,4,980.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (14,5,985.99);
 
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (15,1,20.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (15,2,22.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (15,3,23.00);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (15,4,25.99);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena) VALUES (15,5,19.99);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (13,1,1000.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (13,2,999.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (13,3,990.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (13,4,980.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (13,5,985.99, 0);
+
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (14,1,1000.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (14,2,999.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (14,3,990.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (14,4,980.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (14,5,985.99, 0);
+
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,1,20.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,2,22.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,3,23.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,4,25.99, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,5,19.99, 0);

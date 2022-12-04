@@ -1,5 +1,7 @@
 package si.fri.rso.zddt.izdelki.api.v1.resources;
 
+import si.fri.rso.zddt.common.models.Cena;
+import si.fri.rso.zddt.izdelki.services.config.RestProperties;
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -33,6 +35,9 @@ public class IzdelekResource {
 
     @Inject
     private IzdelekBean izdelekBean;
+
+    @Inject
+    private RestProperties restProperties;
 
     @Operation(description = "Vrne seznam izdelkov.", summary = "Seznam izdelkov")
     @APIResponses({
