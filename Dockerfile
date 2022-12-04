@@ -1,6 +1,9 @@
-FROM adoptopenjdk:15-jre-hotspot
+FROM --platform=linux/arm64 arm64v8/adoptopenjdk:15-jre-hotspot as stage-arm64
+FROM --platform=linux/amd64 adoptopenjdk:15-jre-hotspot as stage-amd64
 
-RUN mkdir /app
+ARG TARGETARCH
+# Select final stage based on TARGETARCH ARG
+FROM stage-${TARGETARCH} as final
 
 WORKDIR /app
 

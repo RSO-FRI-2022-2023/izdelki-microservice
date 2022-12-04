@@ -14,6 +14,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
+      - name: Get current time
+        id: current-time
+        uses: josStorer/get-current-time@v2.0.2
+        with:
+          format: YYYY-MM-DD-HH
+          utcOffset: "+02:00"
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
@@ -32,4 +39,5 @@ jobs:
         with:
           file: ./Dockerfile_with_maven_build
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/rso-izdelki-service
+          platforms: linux/arm64,linux/amd64
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/rso-izdelki-service:latest, ${{ secrets.DOCKERHUB_USERNAME }}/rso-izdelki-service:${{ steps.current-time.outputs.formattedTime }}
