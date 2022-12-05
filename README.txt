@@ -14,6 +14,14 @@ datasource username, password -> config file (enak za vsa izvajalna okolja)
 connection-url: okoliške spremenljivke za vsako izvajalno okolje posebaj
 discount: hierarhija: default false(config file), config strežnik za spreminjanje med izvajanjem
 
-NALOGA 7
-GET http://localhost:8080/v1/trgovine/najblizja/46.0504235/14.4562298
+
+NALOGA 6
+http://localhost:8080/health
+http://localhost:8080/health/live
+http://localhost:8080/health/ready
+http://localhost:8080/health/break
+http://localhost:8080/health/repair
+
+
+GET http://localhost:8080/v1/trgovine/najblizja/46.0504235/14.4562298 
 vrne najblizjo trgovino
