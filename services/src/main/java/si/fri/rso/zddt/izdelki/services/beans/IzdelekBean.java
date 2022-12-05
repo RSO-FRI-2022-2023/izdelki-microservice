@@ -5,6 +5,7 @@ import si.fri.rso.zddt.common.models.Izdelek;
 
 import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.enterprise.context.RequestScoped;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -13,7 +14,7 @@ import java.util.List;
 import org.eclipse.microprofile.metrics.annotation.Timed;
 
 @Slf4j
-@ApplicationScoped
+@RequestScoped
 public class IzdelekBean {
 
     @PostConstruct

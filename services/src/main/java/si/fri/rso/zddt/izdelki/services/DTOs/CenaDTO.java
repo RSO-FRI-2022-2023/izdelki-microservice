@@ -6,6 +6,15 @@ public class CenaDTO {
     private double cena;
     private int izdelek_id;
     private int trgovina_id;
+    private double discount;
+
+    public double getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(double discount) {
+        this.discount = discount;
+    }
 
     public int getIzdelek_id() {
         return izdelek_id;

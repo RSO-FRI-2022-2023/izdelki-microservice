@@ -1,6 +1,7 @@
 package si.fri.rso.zddt.izdelki.api.v1.resources;
 
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
+import com.kumuluz.ee.logs.cdi.Log;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
@@ -24,6 +25,7 @@ import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
 @Slf4j
+@Log
 @ApplicationScoped
 @Path("cene")
 @Produces(MediaType.APPLICATION_JSON)

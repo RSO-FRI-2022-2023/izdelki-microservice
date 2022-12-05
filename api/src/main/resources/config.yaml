@@ -15,10 +15,29 @@ kumuluzee:
       data-source-health-check:
         jndi-name: jdbc/IzdelkiDS
         type: liveness
+      disk-space-health-check:
+        threshold: 100000000
   metrics:
     web-instrumentation:
       - name: izdelki-endpoint
         url-pattern: /v1/izdelki/*
+  logs:
+    config-file: '<?xml version="1.0" encoding="UTF-8"?>
+                          <Configuration name="comments">
+                              <Appenders>
+                                  <Console name="console" target="SYSTEM_OUT">
+                                      <PatternLayout pattern="%d %p %marker %m %X %ex %n"/>
+                                  </Console>
+
+                              </Appenders>
+                              <Loggers>
+                                  <!-- Default logger -->
+                                  <Root level="all">
+                                      <AppenderRef ref="console" level="info" />
+                                      <AppenderRef ref="logstash" level="trace" />
+                                  </Root>
+                              </Loggers>
+                          </Configuration>'
 rest-properties:
   discount: false
   broken: false

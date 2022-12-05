@@ -1,5 +1,6 @@
 package si.fri.rso.zddt.izdelki.api.v1.resources;
 
+import com.kumuluz.ee.logs.cdi.Log;
 import si.fri.rso.zddt.common.models.Cena;
 import si.fri.rso.zddt.izdelki.services.config.RestProperties;
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
@@ -14,6 +15,7 @@ import si.fri.rso.zddt.common.models.Izdelek;
 import si.fri.rso.zddt.izdelki.services.DTOs.IzdelekDTO;
 import si.fri.rso.zddt.izdelki.services.beans.IzdelekBean;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -23,7 +25,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
-@RequestScoped
+@Log
+@ApplicationScoped
 @Path("izdelki")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)

@@ -18,11 +18,11 @@ INSERT INTO izdelek (naziv, kategorija) VALUES ('Električno mestno kolo RKS W6 
 INSERT INTO izdelek (naziv, kategorija) VALUES ('Sobno kolo Body Sculpture BC4618 ', 'Šport in prosti čas');
 INSERT INTO izdelek (naziv, kategorija) VALUES ('Fitnes drog za dvigovanje telesa ', 'Šport in prosti čas');
 
-INSERT INTO Trgovina (ime, lokacija) VALUES ('Big bang novo mesto', 'Šotoška cesta 5, 8000 Novo mesto');
-INSERT INTO Trgovina (ime, lokacija) VALUES ('ENAA', 'Savska cesta 3a, 1000 Ljubljana');
-INSERT INTO Trgovina (ime, lokacija) VALUES ('Mimovrste', 'Šmartinska cesta 152, 1000 Ljubljana');
-INSERT INTO Trgovina (ime, lokacija) VALUES ('Edigital', 'Tržaška cesta 88, 1000 Ljubljana');
-INSERT INTO Trgovina (ime, lokacija) VALUES ('Harvey Norman', 'Ljubljanska cesta 95, 8000 Novo mesto');
+INSERT INTO Trgovina (ime, lokacija, latitude, longitude) VALUES ('Big bang novo mesto', 'Otoška cesta 5, 8000 Novo mesto',45.8279647,15.1839536);
+INSERT INTO Trgovina (ime, lokacija, latitude, longitude) VALUES ('ENAA', 'Savska cesta 3a, 1000 Ljubljana',46.0637614,14.5248386);
+INSERT INTO Trgovina (ime, lokacija, latitude, longitude) VALUES ('Mimovrste', 'Šmartinska cesta 152, 1000 Ljubljana',46.0672429,14.5412972);
+INSERT INTO Trgovina (ime, lokacija, latitude, longitude) VALUES ('Edigital', 'Tržaška cesta 88, 1000 Ljubljana',46.0416044,14.4762644);
+INSERT INTO Trgovina (ime, lokacija, latitude, longitude) VALUES ('Harvey Norman', 'Ljubljanska cesta 95, 8000 Novo mesto',45.8296044,15.1569272);
 
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,1,399.99, 0);
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,2,399.99, 0);
@@ -68,7 +68,7 @@ INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (7,4,1222.00, 
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (7,4,999.00, 0);
 
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (8,1,1610.00, 0);
-INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount VALUES (8,2,1699.00, 0);
+INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (8,2,1699.00, 0);
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (8,3,1550.00, 0);
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (8,4,1550.00, 0);
 

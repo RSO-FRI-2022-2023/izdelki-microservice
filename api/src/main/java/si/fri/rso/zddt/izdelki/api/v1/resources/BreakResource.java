@@ -1,4 +1,5 @@
 package si.fri.rso.zddt.izdelki.api.v1.resources;
+import com.kumuluz.ee.logs.cdi.Log;
 import si.fri.rso.zddt.izdelki.services.config.RestProperties;
 
 import javax.enterprise.context.ApplicationScoped;
@@ -12,8 +13,10 @@ import javax.ws.rs.core.Response;
 import java.util.logging.Logger;
 
 @ApplicationScoped
+@Log
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
+@Path("health")
 public class BreakResource {
 
 
@@ -26,7 +29,16 @@ public class BreakResource {
     @Path("break")
     public Response makeUnhealthy() {
 
-        restProperties.setBroken(!restProperties.getBroken());
+        restProperties.setBroken(true);
+
+        return Response.status(Response.Status.OK).build();
+    }
+
+    @POST
+    @Path("repair")
+    public Response makeHealthy() {
+
+        restProperties.setBroken(false);
 
         return Response.status(Response.Status.OK).build();
     }

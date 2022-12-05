@@ -1,6 +1,7 @@
 package si.fri.rso.zddt.izdelki.api.v1.resources;
 
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
+import com.kumuluz.ee.logs.cdi.Log;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -10,8 +11,11 @@ import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
 import si.fri.rso.zddt.common.models.Trgovina;
 import si.fri.rso.zddt.izdelki.services.DTOs.TrgovinaDTO;
+import si.fri.rso.zddt.izdelki.services.DTOs.TrgovinaDistanceDTO;
 import si.fri.rso.zddt.izdelki.services.beans.TrgovinaBean;
+import si.fri.rso.zddt.izdelki.services.clients.DistanceClient;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
@@ -21,7 +25,8 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
-@RequestScoped
+@Log
+@ApplicationScoped
 @Path("trgovine")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
@@ -33,6 +38,9 @@ public class TrgovinaResource {
 
     @Inject
     private TrgovinaBean trgovinaBean;
+
+    @Inject
+    private DistanceClient distanceClient;
 
     @Operation(description = "Vrne seznam trgovin.", summary = "Seznam trgovin")
     @APIResponses({
@@ -119,6 +127,37 @@ public class TrgovinaResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
+
+    //vrni najbližjo trgovino
+    @Operation(description = "Vrni najbližjo trgovino", summary = "Vrni najbližjo trgovino\"")
+    @APIResponses({
+            @APIResponse(responseCode = "200",
+                    description = "Vrnjena najbližja trgovina"
+            ),
+            @APIResponse(responseCode = "405", description = "Validacijska napaka."),
+    })
+
+    @GET
+    @Path("/najblizja/{lat}/{lng}")
+    public Response najblizjaTrgovina(@Parameter(
+            description = "Latitude trenutne lokacije",
+            required = true)
+                                          @PathParam("lat") double lat, @Parameter(
+            description = "Longitude trenutne lokacije",
+            required = true)
+            @PathParam("lng") double lng) {
+
+        var trgovina = distanceClient.vrniNajblizjo(lat,lng);
+
+
+        if (trgovina != null) {
+            return Response.status(Response.Status.CREATED).entity(trgovina).build();
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).build();
+        }
+    }
+
+
 
     @Operation(description = "Izbriši trgovino.", summary = "Brisanje trgovine")
     @APIResponses({

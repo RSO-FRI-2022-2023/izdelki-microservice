@@ -1,5 +1,6 @@
 package si.fri.rso.zddt.izdelki.api.v1.resources;
 
+import com.kumuluz.ee.logs.cdi.Log;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -19,6 +20,7 @@ import javax.ws.rs.core.Response;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+@Log
 @ApplicationScoped
 @Path("/discount")
 @Consumes(MediaType.APPLICATION_JSON)
