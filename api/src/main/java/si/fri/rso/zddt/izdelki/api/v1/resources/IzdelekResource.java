@@ -91,7 +91,7 @@ public class IzdelekResource {
     })
     @GET
     @Path("/kategorija/{kategorija}")
-    public Response vrniIzdelek(@Parameter(
+    public Response vrniIzdelkeKategorije(@Parameter(
             description = "Kategorija izdelka.",
             required = true) @PathParam("kategorija") String kategorija) {
         List<Izdelek> izdelki = izdelekBean.vrniIzdelke(kategorija);
