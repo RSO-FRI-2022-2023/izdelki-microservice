@@ -27,7 +27,7 @@ public class FaultToleranceExample {
     @GET
     public Response simulateFaultTolerance() {
 
-        var a= faultToleranceExampleClient.getDistancesFaultToleranceExample();
+        var a= faultToleranceExampleClient.getSteviloPriljubljenihIzdelkov();
         return Response.status(Response.Status.OK).entity(a).build();
     }
 
