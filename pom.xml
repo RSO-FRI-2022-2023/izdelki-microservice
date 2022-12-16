@@ -8,6 +8,18 @@
     <artifactId>rso-izdelki</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0-SNAPSHOT</version>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>16</source>
+                    <target>16</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <repositories>
         <repository>
@@ -47,6 +59,9 @@
         <kumuluzee-logs.version>1.4.6</kumuluzee-logs.version>
         <postgresql.version>42.5.0</postgresql.version>
         <kumuluzee-cors.version>1.0.6</kumuluzee-cors.version>
+
+        <kumuluzee-fault-tolerance.version>2.1.1</kumuluzee-fault-tolerance.version>
+        <kumuluzee-rest-client.version>2.0.0</kumuluzee-rest-client.version>
     </properties>
 
     <dependencies>
@@ -127,6 +142,19 @@
                 <groupId>com.kumuluz.ee.logs</groupId>
                 <version>${kumuluzee-logs.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.kumuluz.ee.fault.tolerance</groupId>
+                <artifactId>kumuluzee-fault-tolerance-smallrye</artifactId>
+                <version>${kumuluzee-fault-tolerance.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.kumuluz.ee.rest-client</groupId>
+                <artifactId>kumuluzee-rest-client</artifactId>
+                <version>${kumuluzee-rest-client.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>si.fri.rso.zddt.izdelki</groupId>

@@ -24,6 +24,7 @@ INSERT INTO Trgovina (ime, lokacija, latitude, longitude) VALUES ('Mimovrste', '
 INSERT INTO Trgovina (ime, lokacija, latitude, longitude) VALUES ('Edigital', 'Tržaška cesta 88, 1000 Ljubljana',46.0416044,14.4762644);
 INSERT INTO Trgovina (ime, lokacija, latitude, longitude) VALUES ('Harvey Norman', 'Ljubljanska cesta 95, 8000 Novo mesto',45.8296044,15.1569272);
 
+
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,1,399.99, 0);
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,2,399.99, 0);
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (1,3,499.99, 0);
@@ -114,3 +115,24 @@ INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,2,22.00, 0
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,3,23.00, 0);
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,4,25.99, 0);
 INSERT INTO Cena (izdelek_id, trgovina_id, cena, discount) VALUES (15,5,19.99, 0);
+
+
+
+INSERT INTO Uporabnik (firstname, lastname) VALUES ('David', 'Trafela');
+INSERT INTO Uporabnik (firstname, lastname) VALUES ('Žiga', 'Drab');
+INSERT INTO Uporabnik (firstname, lastname) VALUES ('Ime1', 'Priimek1');
+INSERT INTO Uporabnik (firstname, lastname) VALUES ('Ime2', 'Priimek2');
+
+
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (1, 1);
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (1, 2);
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (1, 3);
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (1, 4);
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (1, 5);
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (2, 1);
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (3, 1);
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (2, 4);
+INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (3, 4);
+
+INSERT INTO Kosarica(user_id) VALUES (1);
+INSERT INTO Kosarica_izdelek(kosarica_kosarica_id, izdelki_izdelek_id) VALUES (2, 1);
