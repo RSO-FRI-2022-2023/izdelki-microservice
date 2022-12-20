@@ -25,3 +25,49 @@ http://localhost:8080/health/repair
 
 GET http://localhost:8080/v1/trgovine/najblizja/46.0504235/14.4562298 
 vrne najblizjo trgovino
+
+
+VAJA 9
+graphql
+http://localhost:8080/graphiql
+
+query MyQuery {
+  izdelek(id: 1) {
+    id
+    kategorija
+    naziv
+  }
+}
+
+
+query MyQuery {
+  izdelke {
+    id
+    kategorija
+    naziv
+    cene {
+      cena
+      discount
+      id
+      izdelek {
+        id
+        kategorija
+        naziv
+      }
+      trgovina {
+        id
+        ime
+        longitude
+        latitude
+        lokacija
+      }
+    }
+  }
+}
+
+mutation MyMutation {
+  deleteImageMetadata(id: 1) {
+    deleted
+  }
+}
+

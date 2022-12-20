@@ -38,6 +38,11 @@ kumuluzee:
                                   </Root>
                               </Loggers>
                           </Configuration>'
+  rest-client:
+    registrations:
+      - class: priljubljeni-izdelki-api
+        url: http://localhost:8082/v1
+        read-timeout: 3000
 rest-properties:
   discount: false
   broken: false

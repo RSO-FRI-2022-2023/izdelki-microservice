@@ -1,7 +1,11 @@
 package si.fri.rso.zddt.izdelki.api.v1.resources;
 
 import com.kumuluz.ee.logs.cdi.Log;
+import lombok.extern.slf4j.Slf4j;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 import si.fri.rso.zddt.common.models.Cena;
+import si.fri.rso.zddt.common.models.PriljubljenIzdelek;
+import si.fri.rso.zddt.izdelki.services.clients.AsyncApi;
 import si.fri.rso.zddt.izdelki.services.config.RestProperties;
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
 import org.eclipse.microprofile.openapi.annotations.Operation;
@@ -23,7 +27,10 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
+import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.CompletionStage;
+import java.util.logging.Logger;
 
 @Log
 @ApplicationScoped
@@ -33,6 +40,10 @@ import java.util.List;
 @CrossOrigin(supportedMethods = "GET, POST, PUT, DELETE, HEAD, OPTIONS")
 public class IzdelekResource {
 
+    @Inject
+    @RestClient
+    private AsyncApi asyncApi;
+
     @Context
     protected UriInfo uriInfo;
 
@@ -41,6 +52,26 @@ public class IzdelekResource {
 
     @Inject
     private RestProperties restProperties;
+
+    private Logger log = Logger.getLogger(IzdelekResource.class.getName());
+
+    @GET
+    @Path("priljubljeni")
+    public Response vrniPriljubljeneIzdelke() throws InterruptedException {
+
+        CompletionStage<PriljubljenIzdelek[]> completionStage =
+                asyncApi.getPriljubljeneIzdelkeAsync();
+
+        CompletionStage<PriljubljenIzdelek[]> result= completionStage.whenComplete((s, throwable) -> log.severe("PODATKI PRIDOBLJENI"));
+        completionStage.exceptionally(throwable -> {
+            log.severe(throwable.getMessage());
+            return null;
+        });
+
+        log.severe("PRED ODGOVOROM");
+        return Response.status(Response.Status.OK).entity(result).build();
+    }
+
 
     @Operation(description = "Vrne seznam izdelkov.", summary = "Seznam izdelkov")
     @APIResponses({
@@ -91,7 +122,7 @@ public class IzdelekResource {
     })
     @GET
     @Path("/kategorija/{kategorija}")
-    public Response vrniIzdelek(@Parameter(
+    public Response vrniIzdelkeKategorije(@Parameter(
             description = "Kategorija izdelka.",
             required = true) @PathParam("kategorija") String kategorija) {
         List<Izdelek> izdelki = izdelekBean.vrniIzdelke(kategorija);
@@ -149,6 +180,8 @@ public class IzdelekResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
+
+
 
 
 }
