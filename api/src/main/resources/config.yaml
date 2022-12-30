@@ -41,7 +41,7 @@ kumuluzee:
   rest-client:
     registrations:
       - class: priljubljeni-izdelki-api
-        url: http://localhost:8082/v1
+        url: https://www.songify.si/rso/priljubljeni-izdelki/v1
         read-timeout: 3000
 rest-properties:
   discount: false
