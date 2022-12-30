@@ -134,7 +134,10 @@ INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (3, 1);
 INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (2, 4);
 INSERT INTO PriljubljenIzdelek (uporabnik_id, izdelek_id) VALUES (3, 4);
 
-INSERT INTO Kosarica_izdelek(izdelki_izdelek_id, uporabnik_id) VALUES (1,1);
-INSERT INTO Kosarica_izdelek(izdelki_izdelek_id, uporabnik_id) VALUES (2,1);
-INSERT INTO Kosarica_izdelek(izdelki_izdelek_id, uporabnik_id) VALUES (1,2);
-INSERT INTO Kosarica_izdelek(izdelki_izdelek_id, uporabnik_id) VALUES (2,2);
+INSERT INTO Kosarica(user_id) VALUES (1);
+INSERT INTO Kosarica(user_id) VALUES (2);
+
+INSERT INTO Kosarica_izdelek(kosarica_kosarica_id, izdelki_izdelek_id) VALUES (1, 1);
+INSERT INTO Kosarica_izdelek(kosarica_kosarica_id, izdelki_izdelek_id) VALUES (1, 2);
+INSERT INTO Kosarica_izdelek(kosarica_kosarica_id, izdelki_izdelek_id) VALUES (2, 1);
+INSERT INTO Kosarica_izdelek(kosarica_kosarica_id, izdelki_izdelek_id) VALUES (2, 2);

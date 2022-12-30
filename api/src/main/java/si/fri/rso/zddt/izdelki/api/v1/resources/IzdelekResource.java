@@ -1,13 +1,7 @@
 package si.fri.rso.zddt.izdelki.api.v1.resources;
 
-import com.kumuluz.ee.logs.cdi.Log;
-import lombok.extern.slf4j.Slf4j;
-import org.eclipse.microprofile.rest.client.inject.RestClient;
-import si.fri.rso.zddt.common.models.Cena;
-import si.fri.rso.zddt.common.models.PriljubljenIzdelek;
-import si.fri.rso.zddt.izdelki.services.clients.AsyncApi;
-import si.fri.rso.zddt.izdelki.services.config.RestProperties;
 import com.kumuluz.ee.cors.annotations.CrossOrigin;
+import com.kumuluz.ee.logs.cdi.Log;
 import org.eclipse.microprofile.openapi.annotations.Operation;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
@@ -15,19 +9,21 @@ import org.eclipse.microprofile.openapi.annotations.parameters.Parameter;
 import org.eclipse.microprofile.openapi.annotations.parameters.RequestBody;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponse;
 import org.eclipse.microprofile.openapi.annotations.responses.APIResponses;
+import org.eclipse.microprofile.rest.client.inject.RestClient;
 import si.fri.rso.zddt.common.models.Izdelek;
+import si.fri.rso.zddt.common.models.PriljubljenIzdelek;
 import si.fri.rso.zddt.izdelki.services.DTOs.IzdelekDTO;
 import si.fri.rso.zddt.izdelki.services.beans.IzdelekBean;
+import si.fri.rso.zddt.izdelki.services.clients.AsyncApi;
+import si.fri.rso.zddt.izdelki.services.config.RestProperties;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletionStage;
 import java.util.logging.Logger;
@@ -62,7 +58,7 @@ public class IzdelekResource {
         CompletionStage<PriljubljenIzdelek[]> completionStage =
                 asyncApi.getPriljubljeneIzdelkeAsync();
 
-        CompletionStage<PriljubljenIzdelek[]> result= completionStage.whenComplete((s, throwable) -> log.severe("PODATKI PRIDOBLJENI"));
+        CompletionStage<PriljubljenIzdelek[]> result = completionStage.whenComplete((s, throwable) -> log.severe("PODATKI PRIDOBLJENI"));
         completionStage.exceptionally(throwable -> {
             log.severe(throwable.getMessage());
             return null;
@@ -180,8 +176,6 @@ public class IzdelekResource {
             return Response.status(Response.Status.NOT_FOUND).build();
         }
     }
-
-
 
 
 }
