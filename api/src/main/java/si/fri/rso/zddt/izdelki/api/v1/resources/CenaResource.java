@@ -14,6 +14,7 @@ import si.fri.rso.zddt.izdelki.services.DTOs.CenaDTO;
 import si.fri.rso.zddt.izdelki.services.beans.CenaBean;
 import si.fri.rso.zddt.izdelki.services.beans.IzdelekBean;
 import si.fri.rso.zddt.izdelki.services.beans.TrgovinaBean;
+import si.fri.rso.zddt.izdelki.services.config.RestProperties;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -23,6 +24,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
+import java.util.logging.Level;
 
 @Slf4j
 @Log
@@ -45,6 +47,9 @@ public class CenaResource {
     @Inject
     private TrgovinaBean trgovinaBean;
 
+    @Inject
+    private RestProperties restProperties;
+
     @Operation(description = "Vrne seznam cen.", summary = "Seznam cen")
     @APIResponse(responseCode = "200",
             description = "Seznam cen.",
@@ -54,6 +59,16 @@ public class CenaResource {
     @APIResponse(responseCode = "404", description = "Cena not found")
     @GET
     public Response vrniCene() {
+        double factor = 1.0;
+        if(restProperties.getDiscount()){
+            factor = 0.1;
+            log.info("DISCOUNT is SET");
+            cenaBean.popust(factor);
+        }else{
+            factor = 0;
+            log.info("DISCOUNT RESET");
+        }
+        cenaBean.popust(factor);
         List<Cena> cene = cenaBean.vrniVseCene();
         return Response.status(Response.Status.OK).entity(cene).build();
     }
@@ -71,7 +86,6 @@ public class CenaResource {
             description = "Identifikator izdelka.",
             required = true)
                                     @PathParam("id") int id) {
-        log.info("a");
         List<Cena> cene = cenaBean.vrniCeneIzdelka(id);
         if (cene != null) {
             return Response.status(Response.Status.OK).entity(cene).build();
