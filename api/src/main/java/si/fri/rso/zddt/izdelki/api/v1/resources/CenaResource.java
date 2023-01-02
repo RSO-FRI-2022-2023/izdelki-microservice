@@ -86,6 +86,16 @@ public class CenaResource {
             description = "Identifikator izdelka.",
             required = true)
                                     @PathParam("id") int id) {
+        double factor = 1.0;
+        if(restProperties.getDiscount()){
+            factor = 0.1;
+            log.info("DISCOUNT is SET");
+            cenaBean.popust(factor);
+        }else{
+            factor = 0;
+            log.info("DISCOUNT RESET");
+        }
+        cenaBean.popust(factor);
         List<Cena> cene = cenaBean.vrniCeneIzdelka(id);
         if (cene != null) {
             return Response.status(Response.Status.OK).entity(cene).build();

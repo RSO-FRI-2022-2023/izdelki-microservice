@@ -55,21 +55,4 @@ public class DiscountResource {
         cenaBean.popust(factor);
         return Response.status(Response.Status.OK).build();
     }
-
-    @POST
-    @Path("set")
-    public Response set() {
-        restProperties.setDiscount(true);
-        return Response.status(Response.Status.OK).build();
-    }
-
-    @POST
-    @Path("reset")
-    public Response reset() {
-        restProperties.setDiscount(false);
-        return Response.status(Response.Status.OK).build();
-    }
-
-
-
 }
