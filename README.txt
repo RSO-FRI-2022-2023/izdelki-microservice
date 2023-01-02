@@ -45,11 +45,12 @@ vrne najblizjo trgovino
 VAJA 7
 V grafani
 marker.name: ENTRY
-contextMap.applicationName: priljubljeni-izdelki-service
-contextMap.applicationName: izdelki-service
+contextMap.applicationName: "priljubljeni-izdelki-service"
+contextMap.applicationName: "izdelki-service"
 contextMap.method: vrniIzdelke
 
-TODO ENTRY, kaj pa EXIT???
+contextMap.applicationName:"priljubljeni-izdelki-service" AND level:"INFO"
+
 KAKO DEMONSTRACIJA SLEDENJE ZAHTEVKOV NA RAZLICNIH MIKROSTORITVAH- pri kosaricah ???
 NUJNO DODAJ CENTRALNO BELEZENJE Z INTERCEPTORJEM NA VSE STORITVE.
 
@@ -65,7 +66,6 @@ Glej LOGE...
 VAJA 9
 graphql
 http://localhost:8080/graphiql
-TODO DODEJ ZA PRODUCTION
 
 query MyQuery {
   izdelek(id: 1) {

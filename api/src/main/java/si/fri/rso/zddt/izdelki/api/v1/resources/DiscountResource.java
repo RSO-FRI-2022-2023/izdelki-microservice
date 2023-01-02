@@ -43,7 +43,7 @@ public class DiscountResource {
     @APIResponse(responseCode = "404", description = "Error")
     @POST
     @Path("discount")
-    public Response dodajPopust() {
+    public Response applay() {
         double factor = 1.0;
         if(restProperties.getDiscount()){
             factor = 0.1;
@@ -53,6 +53,20 @@ public class DiscountResource {
             log.log(Level.INFO, "DISCOUNT RESET");
         }
         cenaBean.popust(factor);
+        return Response.status(Response.Status.OK).build();
+    }
+
+    @POST
+    @Path("set")
+    public Response set() {
+        restProperties.setDiscount(true);
+        return Response.status(Response.Status.OK).build();
+    }
+
+    @POST
+    @Path("reset")
+    public Response reset() {
+        restProperties.setDiscount(false);
         return Response.status(Response.Status.OK).build();
     }
 
